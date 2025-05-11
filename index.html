@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Mother's Day</title>
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      background-color: #fff8f0;
+      color: #333;
+      padding: 40px;
+      font-size: 1.5em;
+      max-width: 800px;
+      margin: auto;
+      line-height: 1.6;
+    }
+    .poem {
+      white-space: pre-wrap;
+      border-left: 3px solid pink;
+      padding-left: 20px;
+    }
+    .cursor {
+      display: inline-block;
+      width: 10px;
+      background-color: #333;
+      animation: blink 1s steps(1) infinite;
+      vertical-align: bottom;
+    }
+    @keyframes blink {
+      0%, 50% { opacity: 1; }
+      50.01%, 100% { opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Happy Mother's Day ❤️</h1>
+  <div class="poem" id="poem"></div><span class="cursor"></span>
+
+  <script>
+    const text = `
+To the one who held me first,
+to the one who loves me most.
+To the one who takes me as I am,
+the one about which I boast.
+
+There are no words that I can use,
+to show how much I care.
+I see how much you do for me,
+I see how much you're there.
+
+At times I sit and think,
+how I am so blessed.
+You make sure I am comfortable,
+even if you're stressed
+
+I sense it every day,
+the love you have for me.
+I feel it in my clothes,
+I feel it in my sleep.
+
+I hear it in your voice,
+I see it on your face,
+I smell it in your food,
+I feel it in your embrace.
+
+And though I may not say it
+as often as I should.
+I wouldn't trade you for the world,
+no, I never could. 
+
+So Happy Mothers day,
+a day I feel so lucky,
+because if I get to say I love you
+then everyday is mothers day to me.
+
+Happy Mother’s Day! I love you, Mom.
+
+-Nolan`;
+
+    let i = 0;
+    const speed = 30; // milliseconds
+    const poemEl = document.getElementById("poem");
+
+    function typeWriter() {
+      if (i < text.length) {
+        poemEl.innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+      }
+    }
+    //document.addEventListener("DOMContentLoaded", typeWriter);
+    window.onload = typeWriter;
+  </script>
+</body>
+</html>
